@@ -10,6 +10,8 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerListener;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+import java.util.Optional;
+
 public class Util {
 
     public static void openItem(PlayerEntity player, int invSlot) {
@@ -77,7 +79,11 @@ public class Util {
             }
 
             public void isValid() {
-                if (!areItemsEqual(stack, player.getInventory().getStack(slotID))) {
+                try {
+                    if (!areItemsEqual(stack, player.getInventory().getStack(slotID))) {
+                        ((ServerPlayerEntity) player).closeHandledScreen();
+                    }
+                } catch (NullPointerException e) {
                     ((ServerPlayerEntity) player).closeHandledScreen();
                 }
             }

@@ -17,8 +17,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.*;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 
 
 public class QuickShulkerMod implements ModInitializer, RegisterQuickShulker {
@@ -40,11 +40,11 @@ public class QuickShulkerMod implements ModInitializer, RegisterQuickShulker {
                             Util.openItem(player, 0, player.getInventory().selectedSlot);
                         else Util.openItem(player, 0, PlayerInventory.OFF_HAND_SLOT);
 
-                        return TypedActionResult.success(stack);
+                        return ActionResult.SUCCESS;
                     }
                 }
             }
-            return TypedActionResult.pass(stack);
+            return ActionResult.PASS;
         });
         FabricLoader.getInstance().getEntrypoints(MOD_ID, RegisterQuickShulker.class).forEach(RegisterQuickShulker::registerProviders);
     }

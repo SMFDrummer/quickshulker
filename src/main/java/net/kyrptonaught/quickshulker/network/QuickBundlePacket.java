@@ -94,7 +94,7 @@ public record QuickBundlePacket(ItemStackWithPos itemStackWithPos) implements Cu
 
         public static final Id<BundleIntoHeld> ID = new Id<>(Identifier.of(QuickShulkerMod.MOD_ID, "quick_bundleheld_packet"));
 
-        public static final PacketCodec<RegistryByteBuf, BundleIntoHeld> CODEC = PacketCodec.tuple(ItemStack.LIST_PACKET_CODEC, BundleIntoHeld::stackList, BundleIntoHeld::new);
+        public static final PacketCodec<RegistryByteBuf, BundleIntoHeld> CODEC = PacketCodec.tuple(ItemStack.OPTIONAL_LIST_PACKET_CODEC, BundleIntoHeld::stackList, BundleIntoHeld::new);
 
         public static void registerReceivePacket() {
             PayloadTypeRegistry.playS2C().register(BundleIntoHeld.ID, BundleIntoHeld.CODEC);

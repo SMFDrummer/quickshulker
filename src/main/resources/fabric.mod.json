@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "quickshulker",
-  "version": "1.4.5-1.21",
+  "version": "1.5.0-1.21.3",
   "name": "Quick Shulker",
   "description": "Quickly open Shulker boxes and more",
   "authors": [
     "kyrptonaught",
     "Hao_cen",
-    "Grayer0113"
+    "Grayer0113",
+    "SMFDrummer"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/quick-shulker",
@@ -35,9 +36,6 @@
     ],
     "client": [
       "net.kyrptonaught.quickshulker.client.QuickShulkerModClient"
-    ],
-    "modmenu": [
-      "net.kyrptonaught.quickshulker.config.modmenu.ModMenuIntegration"
     ]
   },
   "depends": {
